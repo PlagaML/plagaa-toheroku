@@ -5,4 +5,5 @@ gunicorn
 
 scikit-learn==0.23.1
 joblib==0.17.0
+pandas==1.0.5
 
