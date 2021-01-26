@@ -18,9 +18,12 @@ model_file_path = os.path.join(my_dir, 'model.pickle')
 scaler_file_path = os.path.join(my_dir, 'scaler.pickle')
 
 #final selected data
-feature_names = ['precip l_0', 'temp_prom l_0','precip l_5', 'temp_prom l_5',
-                 'provincia']
-numeric_feature_names = ['precip l_0', 'temp_prom l_0', 'precip l_5', 'temp_prom l_5']
+feature_names = ['temp_max l_4', 'precip l_5', 'temp_max l_2', 'temp_min l_1', 'temp_prom l_3', 
+                 'temp_min l_3', 'temp_min l_4', 'temp_min l_2', 'temp_prom l_2',
+                'provincia']
+numeric_feature_names = ['temp_max l_4', 'precip l_5', 'temp_max l_2', 'temp_min l_1',
+       'temp_prom l_3', 'temp_min l_3', 'temp_min l_4', 'temp_min l_2',
+       'temp_prom l_2']
 categor_feature_names = ['provincia']
 outcome_name = ['TARGET']
 
@@ -56,10 +59,15 @@ def api_predict():
         
 
         new_data = pd.DataFrame([
-        {'Name': 'M 3', 'precip l_0': 22.068888, 'temp_prom l_0': 26.891296, 'precip l_5': 0.056287, 'temp_prom l_5': 28.582603, 'provincia': 'SAN MARTIN'},
-        {'Name': 'M 1', 'precip l_0': 2.736914, 'temp_prom l_0': 26.846750, 'precip l_5': 13.684924, 'temp_prom l_5': 23.525642, 'provincia': 'PICOTA'},
-        {'Name': 'M 2', 'precip l_0': 2.736914, 'temp_prom l_0': 26.846750, 'precip l_5': 13.684924, 'temp_prom l_5': 23.525642, 'provincia': 'PICOTA'},
-         
+        {'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'BELLAVISTA' },
+{'temp_max l_4': 30.221358, 'precip l_5': 22.944548, 'temp_max l_2': 31.381693, 'temp_min l_1': 22.960336, 'temp_prom l_3': 27.196949, 'temp_min l_3': 23.375591, 'temp_min l_4': 22.978642, 'temp_min l_2': 23.566438  , 'temp_prom l_2': 27.474066, 'provincia': 'SAN MARTIN' },
+{'temp_max l_4': 30.876208, 'precip l_5': 3.793558, 'temp_max l_2': 31.280876, 'temp_min l_1': 20.371897, 'temp_prom l_3': 25.245815, 'temp_min l_3': 19.853952, 'temp_min l_4': 20, 'temp_min l_2': 20, 'temp_prom l_2': 20, 'provincia': 'RIOJA' },
+{'temp_max l_4': 29, 'precip l_5': 0.6, 'temp_max l_2': 28, 'temp_min l_1': 20, 'temp_prom l_3': 24, 'temp_min l_3': 20, 'temp_min l_4': 20, 'temp_min l_2': 20, 'temp_prom l_2': 24, 'provincia': 'MOYOBAMBA' },
+
+{'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'PICOTA' },
+{'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'TOCACHE' },
+  
+
         ])
         print(new_data)
 
@@ -122,10 +130,14 @@ def predict():
         scaler = cargarScalerSiEsNecesario()
 
         new_data = pd.DataFrame([
-        {'Name': 'M 3', 'precip l_0': 22.068888, 'temp_prom l_0': 26.891296, 'precip l_5': 0.056287, 'temp_prom l_5': 28.582603, 'provincia': 'SAN MARTIN'},
-        {'Name': 'M 1', 'precip l_0': 2.736914, 'temp_prom l_0': 26.846750, 'precip l_5': 13.684924, 'temp_prom l_5': 23.525642, 'provincia': 'PICOTA'},
-        {'Name': 'M 2', 'precip l_0': 2.736914, 'temp_prom l_0': 26.846750, 'precip l_5': 13.684924, 'temp_prom l_5': 23.525642, 'provincia': 'PICOTA'},
-         
+      {'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'BELLAVISTA' },
+{'temp_max l_4': 30.221358, 'precip l_5': 22.944548, 'temp_max l_2': 31.381693, 'temp_min l_1': 22.960336, 'temp_prom l_3': 27.196949, 'temp_min l_3': 23.375591, 'temp_min l_4': 22.978642, 'temp_min l_2': 23.566438  , 'temp_prom l_2': 27.474066, 'provincia': 'SAN MARTIN' },
+{'temp_max l_4': 30.876208, 'precip l_5': 3.793558, 'temp_max l_2': 31.280876, 'temp_min l_1': 20.371897, 'temp_prom l_3': 25.245815, 'temp_min l_3': 19.853952, 'temp_min l_4': 20, 'temp_min l_2': 20, 'temp_prom l_2': 20, 'provincia': 'RIOJA' },
+{'temp_max l_4': 29, 'precip l_5': 0.6, 'temp_max l_2': 28, 'temp_min l_1': 20, 'temp_prom l_3': 24, 'temp_min l_3': 20, 'temp_min l_4': 20, 'temp_min l_2': 20, 'temp_prom l_2': 24, 'provincia': 'MOYOBAMBA' },
+
+{'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'PICOTA' },
+{'temp_max l_4': 27.303525, 'precip l_5': 5.453901, 'temp_max l_2': 33.722817, 'temp_min l_1': 21.857262, 'temp_prom l_3': 25.483028, 'temp_min l_3': 21.190212, 'temp_min l_4': 21.686244, 'temp_min l_2': 21.037416, 'temp_prom l_2': 27.380116, 'provincia': 'TOCACHE' },
+    
         ])
         print(new_data)
 
