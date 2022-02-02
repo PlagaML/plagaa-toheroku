@@ -26,7 +26,7 @@
             <div class="control">
               <input
               name="anho" class="input"
-              type="number" placeholder="Enter año" value="2021">
+              type="number" placeholder="Enter año" value="2023">
             </div>
           </div>
 
@@ -41,11 +41,9 @@
 
             Result: {{inputs}} <hr> 
              
-             {% for item in predictions %}
-             <span>{{ item }}</span><br>
-          {% endfor %}
-          item['precip l_0']
-
+              {% for item in predictions %}
+                <span>{{ item }}</span><br>
+              {% endfor %}
           {% else %}
             <p>No predicts!</p>
           {% endif %}
